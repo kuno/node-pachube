@@ -7,6 +7,8 @@
     "contributions":[],
     "repository":
     {
+    "type":"git",
+    "url":"http://github.com/kuno/node-pachube"
     },
     "dependencies":
     {
@@ -14,6 +16,7 @@
     },
     "bugs":
     {
+    "web":"http://github.com/kuno/node-pachube/issues"
     },
     "main":"index.js",
     "directory":
@@ -27,7 +30,7 @@
       [
       {
         "type":"MIT",
-        "url":""
+        "url":"http://github.com/kuno/node-pachube/blob/master/LICENCE"
       }
   ]
 }
