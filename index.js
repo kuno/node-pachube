@@ -9,6 +9,6 @@ var Feed           = require('./lib/feed.js'),
 exports.Feed       = Feed;
 exports.Trigger    = Trigger;
 exports.DataPoint  = DataPoint;
-exports.dataStream = DataStream;
+exports.DataStream = DataStream;
 
 exports.version    = JSON.parse(fs.readFileSync(path.join(__dirname, './package.json'))).version;
