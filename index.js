@@ -1,3 +1,4 @@
+var fs            = require('fs');
 var Feed           = require('./lib/feed.js'),
     Trigger        = require('./lib/trigger.js'),
     DataPoint      = require('./lib/dataPoint.js'),
@@ -8,4 +9,4 @@ exports.Trigger    = Trigger;
 exports.DataPoint  = DataPoint;
 exports.dataStream = DataStream;
 
-exports.version    = JSON.parse('./package.json').version;
+exports.version    = JSON.parse(fs.readFileSync('./package.json')).version;
