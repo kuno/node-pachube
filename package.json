@@ -1,0 +1,33 @@
+{
+  "name":"pachube",
+  "description": "A simple wrapper for api.pachube.com",
+    "version":"0.0.1",
+    "homepage":"http://api.pachube.com",
+    "author":"Guan 'kuno' Qing <neokuno AT Gmail DOT com>",
+    "contributions":[],
+    "repository":
+    {
+    },
+    "dependencies":
+    {
+    "dox":">=0.0.5"
+    },
+    "bugs":
+    {
+    },
+    "main":"index.js",
+    "directory":
+    {
+      "lib":"./lib",
+      "test":"./test",
+      "include":"./include"
+    },
+    "engine":{"node":">=0.4.0"},
+    "licenses":
+      [
+      {
+        "type":"MIT",
+        "url":""
+      }
+  ]
+}
