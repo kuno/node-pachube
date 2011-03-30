@@ -11,4 +11,4 @@ exports.Trigger    = Trigger;
 exports.DataPoint  = DataPoint;
 exports.dataStream = DataStream;
 
-exports.version    = JSON.parse(fs.readFileSync(path.join(__dir, './package.json'))).version;
+exports.version    = JSON.parse(fs.readFileSync(path.join(__dirname, './package.json'))).version;
