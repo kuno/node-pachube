@@ -1,1 +1,1 @@
-A simple warpper for api.pachube.com.
+A simple warpper for pachube.com API v2.
