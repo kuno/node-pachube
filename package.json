@@ -12,7 +12,6 @@
     },
     "dependencies":
     {
-    "dox":">=0.0.5"
     },
     "bugs":
     {

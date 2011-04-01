@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>lib_point.js</title>
+<link rel="stylesheet" href="../../css/prettify_wynn.css" media="all"></link>
+<link rel="stylesheet" href="../../css/all.css" media="all"></link>
+<script src="../../javascript/all.js"></script>
+<script src="../../javascript/prettify.js"></script>
+</head><body onload="prePrettyPrint();"><pre>/**
+* @require
+*/
+var Stream            = require('./stream.js'),
+    request           = require('./http.js').request,
+    makePointOptions  = require('./utils.js').makePointOptions,
+    defaultDataFormat = require('../include/meta.js').defaultDataFormat;
+
+
+/**
+* Create an instance of Point
+*
+* @constructor {Point}
+* @this        {Point}
+* @param       {string}     masterApikey Your pachube api key.
+*/
+function Point(masterApikey, feedID, streamID) {
+  /** @private */this.masterApiKey  = masterApikey;
+  /** @private */this.feedID   = feedID.toString();
+  /** @private */this.streamID = streamID.toString();
+}
+
+/**
+* @inheritance DataStream
+*/
+Point.prototype = Stream.prototype;
+
+
+/**
+* Create datapoint: POST /v2/feeds/&lt;feed_id>/datastreams/&lt;datastream_id>/datapoints
+* 
+* @this    {Point}
+* @param   {function} callback           The callback function.
+* @param   {string}   optionalDataFormat Optional data format parameter, json, xml or csv, default to json.
+* @returns {string}                      HTTP headers only
+*/
+Point.prototype.create = function(callback, optionalDataFormat) {
+  var options          = makePointOptions('POST', this.feedID, this.streamID);
+  var dataFormat       = optionalDataFormat || defaultDataFormat;
+  request(this.masterApiKey, options, callback, dataFormat);
+};
+
+
+/**
+* Read datapoint: GET /v2/feeds/&lt;feed_id>/datastreams/&lt;datastream_id>/datapoints/&lt;timestamp>
+*
+* @this    {Point}
+* @param   {string}   timestamp          The timestamp for data point.
+* @param   {function} callback           The callback function.
+* @param   {string}   optionalDataFormat Optional data format parameter, json, xml for csv, default to json.
+* @returns {string}                      datapoint
+*/
+Point.prototype.read = function(timestamp, callback, optionalDataFormat) {
+  var options        = makePointOptions('GET', this.feedID, this.streamID, timestamp);
+  var dataFormat     = optionalDataFormat || defaultDataFormat;
+  request(this.masterApiKey, options, callback, dataFormat);
+};
+
+
+/**
+* @export
+*/
+module.exports = Point;
+</pre></body></html>
