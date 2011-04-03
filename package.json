@@ -1,7 +1,7 @@
 {
   "name":"pachube",
   "description": "A simple wrapper for api.pachube.com",
-    "version":"0.0.1",
+    "version":"0.0.2pre",
     "homepage":"http://api.pachube.com",
     "author":"Guan 'kuno' Qing <neokuno AT Gmail DOT com>",
     "contributions":[],
