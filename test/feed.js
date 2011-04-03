@@ -6,7 +6,5 @@ var parameters = [{key:"lat",value:51.52},{key:"lon",value:0.13},{key:"distance"
 
 feed.list(parameters, function(data) {
     var result = JSON.parse(data);
-    while (result[k]) { 
-      console.log(k);
-    }
+    console.log(result);
 });
