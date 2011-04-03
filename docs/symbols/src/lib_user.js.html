@@ -43,14 +43,14 @@ User.prototype.list = function(callback, optionalDataFormat) {
 * Create user: POST /v2/users
 *
 * @this  {User}
-* @param {string}   dataFile The path to data file.
-* @param {function} callback The callback function.
+* @param {string}   dataSource         The data source, a path, a string or an object. 
+* @param {function} callback           The callback function.
 * @param {string}   optionalDataFormat Optional data format parameter, json or xml, default to json.
 */           
-User.prototype.create = function(dataFile, callback, optionalDataFormat) {
+User.prototype.create = function(dataSource, callback, optionalDataFormat) {
   var options         = makeUserOptions('POST');
   var dataFormat      = optionalDataFormat || defaultDataFormat;
-  request(this.masterApiKey, options, callback, dataFormat, dataFile);
+  request(this.masterApiKey, options, callback, dataFormat, dataSource);
 };
 
 
@@ -74,14 +74,14 @@ User.prototype.read = function(userID, callback, optionalDataFormat) {
 *
 * @this  {User}
 * @param {string}   userID             The login name for user (i.e. the Pachube ID).
-* @param {string}   dataFile           The path to data file.
+* @param {string}   dataSource         The data source, a path, a string or an object. 
 * @param {function} callback           The callback function.
 * @param {string}   optionalDataFormat Optional data format parameter, json or xml, default to json.
 */  
-User.prototype.update = function(userID, dataFile, callback, optionalDataFormat) {
+User.prototype.update = function(userID, dataSource, callback, optionalDataFormat) {
   var options         = makeUserOptions('PUT', userID);
   var dataFormat      = optionalDataFormat || defaultDataFormat;
-  request(this.masterApiKey, options, callback, dataFormat, dataFile);
+  request(this.masterApiKey, options, callback, dataFormat, dataSource);
 };
 
 

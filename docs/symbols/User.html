@@ -132,7 +132,7 @@
 								>
 									<td class="attributes">&nbsp;</td>
 									<td class="nameDescription">
-										<div class="fixedFont"><b><a href="../symbols/User.html#create">create</a></b>(dataFile, callback, optionalDataFormat)
+										<div class="fixedFont"><b><a href="../symbols/User.html#create">create</a></b>(dataSource, callback, optionalDataFormat)
 										</div>
 										<div class="description">Create user: POST /v2/users</div>
 									</td>
@@ -176,7 +176,7 @@
 								>
 									<td class="attributes">&nbsp;</td>
 									<td class="nameDescription">
-										<div class="fixedFont"><b><a href="../symbols/User.html#update">update</a></b>(userID, dataFile, callback, optionalDataFormat)
+										<div class="fixedFont"><b><a href="../symbols/User.html#update">update</a></b>(userID, dataSource, callback, optionalDataFormat)
 										</div>
 										<div class="description">Update user: PUT /v2/users/<user_login></div>
 									</td>
@@ -263,7 +263,7 @@
 
 									
 
-									<b>create</b>(dataFile, callback, optionalDataFormat)
+									<b>create</b>(dataSource, callback, optionalDataFormat)
 								</div>
 
 								<div class="description">
@@ -281,10 +281,10 @@
 										<dt class="heading">Parameters:</dt>
 										
 											<dt>
-												<span class="light fixedFont">{string}</span> <b>dataFile</b>
+												<span class="light fixedFont">{string}</span> <b>dataSource</b>
 												
 											</dt>
-											<dd>The path to data file.</dd>
+											<dd>The data source, a path, a string or an object.</dd>
 										
 											<dt>
 												<span class="light fixedFont">{function}</span> <b>callback</b>
@@ -459,7 +459,7 @@
 
 									
 
-									<b>update</b>(userID, dataFile, callback, optionalDataFormat)
+									<b>update</b>(userID, dataSource, callback, optionalDataFormat)
 								</div>
 
 								<div class="description">
@@ -483,10 +483,10 @@
 											<dd>The login name for user (i.e. the Pachube ID).</dd>
 										
 											<dt>
-												<span class="light fixedFont">{string}</span> <b>dataFile</b>
+												<span class="light fixedFont">{string}</span> <b>dataSource</b>
 												
 											</dt>
-											<dd>The path to data file.</dd>
+											<dd>The data source, a path, a string or an object.</dd>
 										
 											<dt>
 												<span class="light fixedFont">{function}</span> <b>callback</b>

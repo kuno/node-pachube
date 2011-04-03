@@ -43,14 +43,14 @@ Trigger.prototype.list = function(callback, optionalDataFormat) {
 * Create trigger: POST /v2/triggers
 *
 * @this  {Trigger}
-* @param {string}   dataFile The path to data file.
+* @param {string}   dataSource The data source, a path, a string or an object.
 * @param {function} callback The callback function.
 * @param {string}   optionalDataFormat Optional data format parameter, json or xml, default to json.
 */
-Trigger.prototype.create = function(dataFile, callback, optionalDataFormat) {
+Trigger.prototype.create = function(dataSource, callback, optionalDataFormat) {
   var options            = makeTriggerOptions('POST');
   var dataFormat         = optionalDataFormat || defaultDataFormat;
-  request(this.masterApiKey, options, callback, dataFormat, dataFile);
+  request(this.masterApiKey, options, callback, dataFormat, dataSource);
 };
 
 
